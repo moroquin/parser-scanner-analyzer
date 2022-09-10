@@ -1,5 +1,6 @@
 @startuml
 
+    object App
     object scanner
 
     object parser
@@ -23,7 +24,7 @@
     object getToken
     object isEndOfFile
     object createSymbolTable
-
+    object ignoreComments
 
     object verifyContextFreeGrammar
     object generateSyntaxTree
@@ -33,16 +34,19 @@
 
     object goalParser
 
+    App ..> analyzer
 
     analyzer *-- scanner
-    
+     parser ..> token
+    scanner ..> token
+
 
     scanner .up.> error
     parser .up.> error
 
     parser o-right- scanner: getToken
 
-    parser ..> syntaxTree
+    scanner ..> syntaxTree
 
     scanner ..> symbolTable
     parser ..>  symbolTable
@@ -61,7 +65,7 @@
     goalParser <|-down- getToken
     goalParser <|-down- isEndOfFile
     goalParser <|-down- createSymbolTable
-
+    goalParser <|-down- ignoreComments
 
     goalsScanner <|-right- verifyContextFreeGrammar
     goalsScanner <|-down- generateSyntaxTree

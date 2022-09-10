@@ -1,0 +1,46 @@
+@startuml classdiagram
+
+    class Analyzer{
+        -Scanner scanner
+    }
+
+    class Scanner{
+        -Parser parser
+    }
+
+    class Parser{
+        +isEndOfFile():boolean
+        +getToken():Token
+        +setInputFile(String path)
+    }
+
+    class Token{
+
+    }
+    
+    class SyntaxTree
+
+    package utils{
+        class ManageFile{
+
+        }
+    }
+
+    class Errors
+
+    class SymbolTable
+
+    Parser ..> ManageFile
+
+    Analyzer *-- Scanner
+    Scanner o-- Parser
+
+    Parser ..> Errors
+    Parser ..> SymbolTable
+
+    Scanner --> SymbolTable
+    Scanner *-- SyntaxTree
+
+
+
+@enduml
