@@ -1,0 +1,73 @@
+@startuml
+
+    object scanner
+
+    object parser
+
+    object analyzer
+
+    object token
+
+    object symbolTable
+
+    object error
+
+    object syntaxTree
+
+    object goalsScanner
+
+    object readFile
+    object closeFile
+    object manageLexicalErrors
+    object verifyRegularGrammar
+    object getToken
+    object isEndOfFile
+    object createSymbolTable
+
+
+    object verifyContextFreeGrammar
+    object generateSyntaxTree
+    object manageSyntaxErrors
+    object verifyCompleteFile
+    object hasErrors
+
+    object goalParser
+
+
+    analyzer *-- scanner
+    
+
+    scanner .up.> error
+    parser .up.> error
+
+    parser o-right- scanner: getToken
+
+    parser ..> syntaxTree
+
+    scanner ..> symbolTable
+    parser ..>  symbolTable
+
+
+
+    scanner *-right- goalsScanner
+
+    parser *-left- goalParser
+
+
+    goalParser <|-up- readFile
+    goalParser <|-up- closeFile
+    goalParser <|-up- manageLexicalErrors
+    goalParser <|-left- verifyRegularGrammar
+    goalParser <|-down- getToken
+    goalParser <|-down- isEndOfFile
+    goalParser <|-down- createSymbolTable
+
+
+    goalsScanner <|-right- verifyContextFreeGrammar
+    goalsScanner <|-down- generateSyntaxTree
+    goalsScanner <|-down- manageSyntaxErrors
+    goalsScanner <|-up- verifyCompleteFile
+    goalsScanner <|-up- hasErrors
+
+
+@enduml

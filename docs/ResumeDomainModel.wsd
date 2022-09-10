@@ -1,0 +1,45 @@
+@startuml
+
+    object scanner
+
+    object parser
+
+    object analyzer
+
+    object token
+
+    object symbolTable
+
+    object error
+
+    object syntaxTree
+
+    object goalsScanner
+
+    object goalParser
+
+
+    analyzer *-- scanner
+    
+
+    scanner .up.> error
+    parser .up.> error
+
+    parser o-right- scanner: getToken
+
+    parser ..> syntaxTree
+
+    scanner ..> symbolTable
+    parser ..>  symbolTable
+
+
+
+    scanner *-right- goalsScanner
+
+    parser *-left- goalParser
+
+
+   
+
+
+@enduml
