@@ -2,7 +2,7 @@
 
 
 class App{
-
+    +executeTestAnalysis()
 }
 
 package analyzer{
@@ -10,10 +10,16 @@ package analyzer{
     package controller{
 
         class AnalyzerController{
-            -scanneable scanner
-            -parseable parser
+            -Scanneable scanner
+            -Parseable parser
             -SymbolTableController symbolTable
             -ErrorController error
+            +setSource(String path): boolean
+            +doAnalysis(): boolean
+            +getSyntaxTree(): SyntaxTree
+            +areErrors(): boolean
+            +getErrors(): Error
+            +getSymbolTable(): SymbolTable
         }
 
         class SymbolTableController{
@@ -29,6 +35,9 @@ package analyzer{
 
         package scanner{
 
+            enum ScannerFactory{
+                +getScanner()
+            }
 
 
             class SyntaxTreeController{
@@ -36,7 +45,7 @@ package analyzer{
 
             }
 
-            interface scannable{
+            interface Scannable{
 
             }
 
@@ -44,15 +53,21 @@ package analyzer{
 
             }
 
-            JSStackAutomat -up-|> scannable
-            scannable *-- SyntaxTreeController
+            JSStackAutomat -up-|> Scannable
+            Scannable *-- SyntaxTreeController
+
+            ScannerFactory .right.> Scannable
 
 
         }
 
         package parser{
 
-            interface parseable{
+            enum ParserFactory{
+                +getParser()
+            }
+
+            interface Parseable{
 
             }
 
@@ -60,18 +75,22 @@ package analyzer{
 
             }
 
-            JSFinitAutamt -up-|> parseable
+            JSFinitAutamt -up-|> Parseable
+            ParserFactory .left.> Parseable
 
         }
 
 
 
-        AnalyzerController *-- parseable
-        AnalyzerController *-- scannable
+        AnalyzerController *-- Parseable
+        AnalyzerController *-- Scannable
         AnalyzerController *-- SymbolTableController
         AnalyzerController *-- ErrorController
 
-        scannable -right-> parseable
+        AnalyzerController ..> ParserFactory
+        AnalyzerController ..> ScannerFactory
+
+        Scannable -right-> Parseable
 
     }
 
