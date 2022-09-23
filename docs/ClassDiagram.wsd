@@ -3,6 +3,7 @@
 
 class App{
     +executeTestAnalysis()
+    +showAnalysisResult(AnalyzerController analyzer)
 }
 
 package analyzer{

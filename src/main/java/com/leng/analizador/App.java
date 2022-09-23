@@ -1,13 +1,52 @@
 package com.leng.analizador;
 
+import com.leng.analizador.analyzer.controller.AnalyzerController;
+
 /**
  * Hello world!
  *
  */
 public class App 
 {
+
+    private final String firstPath = "/home/oliver/workspace-public/test/file1.js";
+
     public static void main( String[] args )
     {
-        System.out.println( "Hola mundo!" );
+        new App().executeTestAnalysis();
     }
+
+    public void executeTestAnalysis(){
+        AnalyzerController firstTest = new AnalyzerController();
+        if (!firstTest.setSource(firstPath)){
+            System.out.println("error en el analisis, intente de nuevo");
+            return;
+        }
+        
+        if (!firstTest.doAnalysis()){
+            System.out.println("no se pudo completar el analisis");
+            return;
+        }
+
+        if (firstTest.areErrors()){
+            System.err.println("El archivo tenia errores");
+            System.err.println("mostrando errores");
+            System.err.println(firstTest.areErrors());
+            
+            showAnalysisResult(firstTest);
+            return;
+        }
+
+        showAnalysisResult(firstTest);
+        //           continuar con las otras fases
+        //           de compilación
+    }
+
+    public void showAnalysisResult(AnalyzerController analyzer){
+        System.out.println("Syntax tree");
+        System.out.println(analyzer.getSyntaxTree());
+        System.out.println(analyzer.getSymbolTable());
+
+    }
+
 }
