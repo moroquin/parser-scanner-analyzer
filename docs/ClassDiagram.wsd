@@ -1,45 +1,119 @@
 @startuml classdiagram
 
-    class Analyzer{
-        -Scanner scanner
-    }
 
-    class Scanner{
-        -Parser parser
-    }
+class App{
 
-    class Parser{
-        +isEndOfFile():boolean
-        +getToken():Token
-        +setInputFile(String path)
-    }
+}
 
-    class Token{
+package analyzer{
 
-    }
-    
-    class SyntaxTree
+    package controller{
 
-    package utils{
-        class ManageFile{
+        class AnalyzerController{
+            -scanneable scanner
+            -parseable parser
+            -SymbolTableController symbolTable
+            -ErrorController error
+        }
+
+        class SymbolTableController{
+            -SymbolTable symbolTable
 
         }
+
+        class ErrorController{
+            -Error error
+
+        }
+
+
+        package scanner{
+
+
+
+            class SyntaxTreeController{
+                -SyntaxTree syntaxTree
+
+            }
+
+            interface scannable{
+
+            }
+
+            class JSStackAutomat{
+
+            }
+
+            JSStackAutomat -up-|> scannable
+            scannable *-- SyntaxTreeController
+
+
+        }
+
+        package parser{
+
+            interface parseable{
+
+            }
+
+            class JSFinitAutamt{
+
+            }
+
+            JSFinitAutamt -up-|> parseable
+
+        }
+
+
+
+        AnalyzerController *-- parseable
+        AnalyzerController *-- scannable
+        AnalyzerController *-- SymbolTableController
+        AnalyzerController *-- ErrorController
+
+        scannable -right-> parseable
+
     }
 
-    class Errors
 
-    class SymbolTable
+    package model{
 
-    Parser ..> ManageFile
+        class Error{
 
-    Analyzer *-- Scanner
-    Scanner o-- Parser
+        }
 
-    Parser ..> Errors
-    Parser ..> SymbolTable
+        class SyntaxTree{
 
-    Scanner --> SymbolTable
-    Scanner *-- SyntaxTree
+        }
+
+        class SymbolTable
+
+
+        class Token{
+            -TypeToken typeToken
+        }
+
+        enum TypeToken{
+
+        }
+
+        Token *-- TypeToken
+
+    }
+
+    SymbolTableController *-- SymbolTable
+    ErrorController *-- Error
+
+    SyntaxTreeController *-- SyntaxTree
+
+    
+
+    
+
+}
+
+
+App .down.> AnalyzerController
 
 
 
