@@ -1,6 +1,8 @@
 package com.leng.analizador;
 
 import com.leng.analizador.analyzer.controller.AnalyzerController;
+import com.leng.analizador.analyzer.controller.parser.ParserFactory;
+import com.leng.analizador.analyzer.controller.scanner.ScannerFactory;
 
 /**
  * Hello world!
@@ -17,7 +19,7 @@ public class App
     }
 
     public void executeTestAnalysis(){
-        AnalyzerController firstTest = new AnalyzerController();
+        AnalyzerController firstTest = new AnalyzerController(ScannerFactory.JSSTACKAUTOMAT , ParserFactory.JSFINITAUTOMAT);
         if (!firstTest.setSource(firstPath)){
             System.out.println("error en el analisis, intente de nuevo");
             return;
