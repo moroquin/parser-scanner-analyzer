@@ -3,6 +3,7 @@
 
 class App{
     +executeTestAnalysis()
+    +showAnalysisResult(AnalyzerController analyzer)
 }
 
 package analyzer{
@@ -46,7 +47,10 @@ package analyzer{
             }
 
             interface Scannable{
-
+                +{abstract}void setParser(Parseable parser);
+                +{abstract}boolean verifyGrammar();
+                +{abstract}void setSymbolTable(SymbolTableController symbolTable);
+                +{abstract}SyntaxTree getSyntaxTree();
             }
 
             class JSStackAutomat{
@@ -68,6 +72,8 @@ package analyzer{
             }
 
             interface Parseable{
+                +{abstract} boolean setSource(String path);
+                +{abstract} void setSymbolTable(SymbolTableController symbolTable);
 
             }
 
@@ -125,9 +131,9 @@ package analyzer{
 
     SyntaxTreeController *-- SyntaxTree
 
-    
 
-    
+
+
 
 }
 
