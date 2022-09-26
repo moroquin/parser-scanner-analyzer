@@ -18,13 +18,7 @@ public class App
 
     public static void main( String[] args )
     {
-        //new App().executeTestAnalysis();
-        try {
-            System.out.println(ManagedFiles.readTextFile("/home/oliver/prueba.txt"));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            System.out.println("error");
-        }
+        new App().executeTestAnalysis();
     }
 
     public void executeTestAnalysis(){
