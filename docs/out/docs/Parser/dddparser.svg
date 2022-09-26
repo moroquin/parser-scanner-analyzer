@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="470px" preserveAspectRatio="none" style="width:906px;height:470px;background:#FFFFFF;" version="1.1" viewBox="0 0 906 470" width="906px" zoomAndPan="magnify"><defs/><g><g id="elem_Parser"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="57" x="304" y="325"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="311" y="341.9659">Parser</text><line style="stroke:#181818;stroke-width:0.5;" x1="305" x2="360" y1="348.0679" y2="348.0679"/></g><g id="elem_TransitionFunction"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="140" x="128.5" y="325"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="135.5" y="341.9659">TransitionFunction</text><line style="stroke:#181818;stroke-width:0.5;" x1="129.5" x2="267.5" y1="348.0679" y2="348.0679"/></g><g id="elem_AccecptanceStates"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="139" x="7" y="225"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="14" y="241.9659">AccecptanceStates</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="145" y1="248.0679" y2="248.0679"/></g><g id="elem_InitialState"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="87" x="231" y="425"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="238" y="441.9659">InitialState</text><line style="stroke:#181818;stroke-width:0.5;" x1="232" x2="317" y1="448.0679" y2="448.0679"/></g><g id="elem_Alphabet"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="75" x="353" y="425"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="360" y="441.9659">Alphabet</text><line style="stroke:#181818;stroke-width:0.5;" x1="354" x2="427" y1="448.0679" y2="448.0679"/></g><g id="elem_States"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="55" x="305" y="225"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="312" y="241.9659">States</text><line style="stroke:#181818;stroke-width:0.5;" x1="306" x2="359" y1="248.0679" y2="248.0679"/></g><g id="elem_ActualState"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="90" x="325.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="332.5" y="23.9659">ActualState</text><line style="stroke:#181818;stroke-width:0.5;" x1="326.5" x2="414.5" y1="30.0679" y2="30.0679"/></g><g id="elem_Goals"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="51" x="657" y="325"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="664" y="341.9659">Goals</text><line style="stroke:#181818;stroke-width:0.5;" x1="658" x2="707" y1="348.0679" y2="348.0679"/></g><g id="elem_ReadFile"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="71" x="829" y="225"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="836" y="241.9659">ReadFile</text><line style="stroke:#181818;stroke-width:0.5;" x1="830" x2="899" y1="248.0679" y2="248.0679"/></g><g id="elem_ReadEachCharacter"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="146" x="539.5" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="546.5" y="141.9659">ReadEachCharacter</text><line style="stroke:#181818;stroke-width:0.5;" x1="540.5" x2="684.5" y1="148.0679" y2="148.0679"/></g><g id="elem_getToken"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="76" x="393.5" y="125"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="400.5" y="141.9659">getToken</text><line style="stroke:#181818;stroke-width:0.5;" x1="394.5" x2="468.5" y1="148.0679" y2="148.0679"/></g><g id="elem_createToken"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="96" x="571.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="578.5" y="23.9659">createToken</text><line style="stroke:#181818;stroke-width:0.5;" x1="572.5" x2="666.5" y1="30.0679" y2="30.0679"/></g><g id="elem_TokenType"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="86" x="450.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="457.5" y="23.9659">TokenType</text><line style="stroke:#181818;stroke-width:0.5;" x1="451.5" x2="535.5" y1="30.0679" y2="30.0679"/></g><g id="elem_ErrorHandler"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="102" x="631.5" y="425"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="638.5" y="441.9659">ErrorHandler</text><line style="stroke:#181818;stroke-width:0.5;" x1="632.5" x2="732.5" y1="448.0679" y2="448.0679"/></g><g id="elem_AlphabetSeparator"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="141" x="467" y="225"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="474" y="241.9659">AlphabetSeparator</text><line style="stroke:#181818;stroke-width:0.5;" x1="468" x2="607" y1="248.0679" y2="248.0679"/></g><g id="elem_SourceText"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="88" x="181.5" y="225"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="188.5" y="241.9659">SourceText</text><line style="stroke:#181818;stroke-width:0.5;" x1="182.5" x2="268.5" y1="248.0679" y2="248.0679"/></g><g id="elem_EndOfFile"><rect fill="#F1F1F1" height="39.0679" style="stroke:#181818;stroke-width:0.5;" width="79" x="643" y="225"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="650" y="241.9659">EndOfFile</text><line style="stroke:#181818;stroke-width:0.5;" x1="644" x2="721" y1="248.0679" y2="248.0679"/></g><!--MD5=[7fff85ecc4c379cd511e16257e3ae22e]
+link TransitionFunction to Parser--><g id="link_TransitionFunction_Parser"><path codeLine="35" d="M268.64,344.5 C275.92,344.5 283.19,344.5 290.47,344.5 " fill="none" id="TransitionFunction-to-Parser" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="303.56,344.5,297.56,340.5,291.56,344.5,297.56,348.5,303.56,344.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[b326864fd77393997656d9fb39438a31]
+link AccecptanceStates to Parser--><g id="link_AccecptanceStates_Parser"><path codeLine="36" d="M125.97,264.13 C168.36,280.14 231.01,303.91 285.5,325 C287.43,325.75 289.41,326.51 291.4,327.29 " fill="none" id="AccecptanceStates-to-Parser" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="303.69,332.1,299.5612,326.1879,292.5159,327.7252,296.6447,333.6373,303.69,332.1" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[9025e469f9cf07a66f86e441b7904597]
+reverse link Parser to InitialState--><g id="link_Parser_InitialState"><path codeLine="37" d="M314.49,375.93 C304.99,391.99 293.63,411.18 285.45,424.99 " fill="none" id="Parser-backto-InitialState" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="321.32,364.4,314.823,367.5287,315.2121,374.7293,321.7092,371.6006,321.32,364.4" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[73d51874d6066767ffbb54af1e58d4b5]
+reverse link Parser to Alphabet--><g id="link_Parser_Alphabet"><path codeLine="38" d="M350.51,375.93 C360.01,391.99 371.37,411.18 379.55,424.99 " fill="none" id="Parser-backto-Alphabet" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="343.68,364.4,343.2908,371.6006,349.7879,374.7293,350.177,367.5287,343.68,364.4" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[c7d80261e97edecbb1269465f47fa466]
+link States to Parser--><g id="link_States_Parser"><path codeLine="39" d="M332.5,264.4 C332.5,277.77 332.5,296.02 332.5,311.63 " fill="none" id="States-to-Parser" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="332.5,324.99,336.5066,318.9944,332.5132,312.99,328.5066,318.9856,332.5,324.99" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[c4e682f427f5e33951c85bea691815e2]
+link SourceText to Parser--><g id="link_SourceText_Parser"><path codeLine="40" d="M245.88,264.16 C261.87,278.81 284.37,299.41 302.43,315.96 " fill="none" id="SourceText-to-Parser" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="312.2,324.91,310.4738,317.9085,303.347,316.8091,305.0732,323.8105,312.2,324.91" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[9c802474d359df2306ea2db525154bdd]
+link AlphabetSeparator to Parser--><g id="link_AlphabetSeparator_Parser"><path codeLine="42" d="M498.46,264.16 C462.61,281.3 409.68,306.6 373.29,324 " fill="none" id="AlphabetSeparator-to-Parser" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="361.16,329.8,368.299,330.8173,371.9838,324.6188,364.8448,323.6015,361.16,329.8" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[1d7eb94205dbb4f6b8cbd882b7d55747]
+reverse link Parser to Goals--><g id="link_Parser_Goals"><path codeLine="45" d="M374.49,344.5 C468.58,344.5 562.68,344.5 656.77,344.5 " fill="none" id="Parser-backto-Goals" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="361.21,344.5,367.21,348.5,373.21,344.5,367.21,340.5,361.21,344.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[bbea7a7720fe799f5dd5e277b747aa2b]
+link ReadFile to Goals--><g id="link_ReadFile_Goals"><path codeLine="46" d="M843.98,264.02 C832.15,274.06 816.65,286.19 801.5,295 C778.05,308.63 750.03,320.25 727.07,328.7 " fill="none" id="ReadFile-to-Goals" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="729.26,335.35,708.07,335.41,724.6,322.15,729.26,335.35" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5a237be4755079b30e539d8b47bac365]
+link ReadEachCharacter to Goals--><g id="link_ReadEachCharacter_Goals"><path codeLine="47" d="M665.53,164.15 C692.85,176.78 723.68,196.44 739.5,225 C754.96,252.91 736.55,285.66 716.65,309.65 " fill="none" id="ReadEachCharacter-to-Goals" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="721.64,314.57,703.03,324.69,711.26,305.17,721.64,314.57" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[a95aebd3a30f4c21510105ba82bcfab8]
+reverse link Goals to ErrorHandler--><g id="link_Goals_ErrorHandler"><path codeLine="48" d="M682.5,384.68 C682.5,398.6 682.5,413.62 682.5,424.99 " fill="none" id="Goals-backto-ErrorHandler" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="675.5,384.4,682.5,364.4,689.5,384.4,675.5,384.4" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[96f3f97c42a07c1d4fef0a34f3a0b581]
+reverse link Goals to getToken--><g id="link_Goals_getToken"><path codeLine="49" d="M636.71,341.45 C583.18,336.44 496,319.62 449.5,264 C425.87,235.74 426.31,189.91 428.84,164.32 " fill="none" id="Goals-backto-getToken" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="637.29,334.48,656.73,342.92,636.27,348.44,637.29,334.48" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[2d746f80a997c3e9e898fc2f5db7dab3]
+reverse link TokenType to getToken--><g id="link_TokenType_getToken"><path codeLine="50" d="M481.14,50.62 C469.48,72.44 452.23,104.72 441.44,124.91 " fill="none" id="TokenType-backto-getToken" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="483.54,46.14,475.7722,52.1949,481.1848,50.5506,482.8292,55.9632,483.54,46.14" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="38" x="466.5" y="90.897">assing</text></g><!--MD5=[64b73dc3007ccf872f2ee9511dfa39e9]
+link ActualState to getToken--><g id="link_ActualState_getToken"><path codeLine="51" d="M380.3,46.14 C389.82,64.23 404.42,92.01 415.6,113.27 " fill="none" id="ActualState-to-getToken" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="421.72,124.91,422.47,117.738,416.1381,114.2873,415.3881,121.4593,421.72,124.91" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[ba42c2d79e096efb6b4b48d50f9a48db]
+link getToken to ReadEachCharacter--><g id="link_getToken_ReadEachCharacter"><path codeLine="52" d="M469.68,144.5 C491.2,144.5 512.72,144.5 534.24,144.5 " fill="none" id="getToken-to-ReadEachCharacter" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="539.42,144.5,530.42,140.5,534.42,144.5,530.42,148.5,539.42,144.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[c4e04aa8f455097460228d9887b31308]
+link EndOfFile to Goals--><g id="link_EndOfFile_Goals"><path codeLine="54" d="M682.5,264.4 C682.5,275.86 682.5,290.91 682.5,304.8 " fill="none" id="EndOfFile-to-Goals" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="689.5,305,682.5,324.99,675.5,304.99,689.5,305" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[db1ebe659bf082c0451b0cd02b9eef27]
+link ReadEachCharacter to AlphabetSeparator--><g id="link_ReadEachCharacter_AlphabetSeparator"><path codeLine="56" d="M598.04,164.4 C585.72,180.5 567.98,203.68 554.88,220.78 " fill="none" id="ReadEachCharacter-to-AlphabetSeparator" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="551.66,224.99,560.3089,220.2787,554.701,221.021,553.9586,215.4131,551.66,224.99" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[f3284ac3e72985f3217eff4e3d838cc4]
+link ReadEachCharacter to EndOfFile--><g id="link_ReadEachCharacter_EndOfFile"><path codeLine="57" d="M626,164.4 C637.5,180.5 654.05,203.68 666.27,220.78 " fill="none" id="ReadEachCharacter-to-EndOfFile" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="669.28,224.99,667.3166,215.3388,666.3792,220.9175,660.8006,219.9801,669.28,224.99" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[4719681faed70802ecb1694f477b1995]
+@startuml dddparser
+
+object Parser
+
+object TransitionFunction
+
+object AccecptanceStates
+
+object InitialState
+
+object Alphabet
+
+object States
+
+object ActualState
+
+object Goals
+
+object ReadFile
+
+object ReadEachCharacter
+
+object getToken
+object createToken
+
+object TokenType
+
+object ErrorHandler
+
+object AlphabetSeparator
+object SourceText
+
+object EndOfFile
+
+
+Parser *-left- TransitionFunction
+Parser *-up- AccecptanceStates
+Parser *- - InitialState
+Parser *- - Alphabet
+Parser *-up- States
+Parser *-up- SourceText
+
+Parser *-up- AlphabetSeparator
+
+
+Parser *-right- Goals
+ReadFile -down-|> Goals
+ReadEachCharacter -down-|> Goals
+ErrorHandler -up-|> Goals
+getToken -left-|> Goals
+getToken .up.>TokenType:assing
+getToken *-up- ActualState
+getToken .right.> ReadEachCharacter
+
+EndOfFile - -|> Goals
+
+ReadEachCharacter ..> AlphabetSeparator
+ReadEachCharacter ..> EndOfFile
+
+
+
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 11:01:30 CST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

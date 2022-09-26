@@ -1,0 +1,67 @@
+@startuml dddparser
+
+object Parser
+
+object TransitionFunction
+
+object AccecptanceStates
+
+object InitialState
+
+object Alphabet
+
+object States
+
+object ActualState 
+
+object Goals
+
+object ReadFile
+
+object ReadEachCharacter
+
+object getToken
+object createToken
+
+object TokenType
+
+object ErrorHandler
+
+object AlphabetSeparator
+object Path
+
+object EndOfFile
+
+object line
+object column
+
+
+Parser *-left- TransitionFunction
+Parser *-up- AccecptanceStates
+Parser *-- InitialState
+Parser *-- Alphabet
+Parser *-up- States
+Parser *-up- Path
+Parser *-- line
+Parser *-- column
+Parser *-up- AlphabetSeparator
+
+
+Parser *-right- Goals
+ReadFile -down-|> Goals
+ReadEachCharacter -down-|> Goals
+ErrorHandler -up-|> Goals
+getToken -left-|> Goals
+getToken .up.>TokenType:assing
+getToken *-up- ActualState
+getToken .right.> ReadEachCharacter
+
+EndOfFile --|> Goals
+
+ReadEachCharacter ..> AlphabetSeparator
+ReadEachCharacter ..> EndOfFile
+
+
+
+
+@enduml
