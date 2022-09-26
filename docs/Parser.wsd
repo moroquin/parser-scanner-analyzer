@@ -12,7 +12,7 @@ object Alphabet
 
 object States
 
-object ActualState
+object ActualState 
 
 object Goals
 
@@ -28,9 +28,12 @@ object TokenType
 object ErrorHandler
 
 object AlphabetSeparator
-object SourceText
+object Path
 
 object EndOfFile
+
+object line
+object column
 
 
 Parser *-left- TransitionFunction
@@ -38,8 +41,9 @@ Parser *-up- AccecptanceStates
 Parser *-- InitialState
 Parser *-- Alphabet
 Parser *-up- States
-Parser *-up- SourceText
-
+Parser *-up- Path
+Parser *-- line
+Parser *-- column
 Parser *-up- AlphabetSeparator
 
 
