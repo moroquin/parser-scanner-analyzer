@@ -1,8 +1,11 @@
 package com.leng.analizador;
 
+import java.io.IOException;
+
 import com.leng.analizador.analyzer.controller.AnalyzerController;
 import com.leng.analizador.analyzer.controller.parser.ParserFactory;
 import com.leng.analizador.analyzer.controller.scanner.ScannerFactory;
+import com.leng.analizador.utils.ManagedFiles;
 
 /**
  * Hello world!
@@ -15,7 +18,13 @@ public class App
 
     public static void main( String[] args )
     {
-        new App().executeTestAnalysis();
+        //new App().executeTestAnalysis();
+        try {
+            System.out.println(ManagedFiles.readTextFile("/home/oliver/prueba.txt"));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            System.out.println("error");
+        }
     }
 
     public void executeTestAnalysis(){
