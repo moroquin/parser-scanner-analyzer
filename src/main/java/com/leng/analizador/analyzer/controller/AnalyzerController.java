@@ -20,12 +20,11 @@ public class AnalyzerController {
         this.parser = parserF.getParser();
         this.scanner = scannerF.getScanner();
         this.scanner.setParser(this.parser);
-        this.parser.setSymbolTable(this.symbolTable);
         this.scanner.setSymbolTable(this.symbolTable);
     }
 
     public boolean setSource(String path) {
-        if (parser.setSource(path)){
+        if (parser.readFile(path)){
             isSourceLoaded = true;
         }
         return isSourceLoaded;

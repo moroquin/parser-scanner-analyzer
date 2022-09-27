@@ -1,4 +1,4 @@
-package com.leng.analizador.utils;
+package com.leng.analizador.analyzer.utils;
 
 import java.io.IOException;
 import java.nio.file.Files;

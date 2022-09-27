@@ -5,7 +5,7 @@ import java.io.IOException;
 import com.leng.analizador.analyzer.controller.AnalyzerController;
 import com.leng.analizador.analyzer.controller.parser.ParserFactory;
 import com.leng.analizador.analyzer.controller.scanner.ScannerFactory;
-import com.leng.analizador.utils.ManagedFiles;
+
 
 /**
  * Hello world!
@@ -22,7 +22,7 @@ public class App
     }
 
     public void executeTestAnalysis(){
-        AnalyzerController firstTest = new AnalyzerController(ScannerFactory.JSSTACKAUTOMAT , ParserFactory.JSFINITAUTOMAT);
+        AnalyzerController firstTest = new AnalyzerController(ScannerFactory.JSSTACKAUTOMAT , ParserFactory.JSSPARSER);
         if (!firstTest.setSource(firstPath)){
             System.out.println("error en el analisis, intente de nuevo");
             return;

@@ -1,11 +1,13 @@
 package com.leng.analizador.analyzer.controller.parser;
 
-import com.leng.analizador.analyzer.controller.SymbolTableController;
+import com.leng.analizador.analyzer.models.Token;
 
 public interface Parseable {
 
-    boolean setSource(String path);
+    boolean readFile(String path);
 
-    void setSymbolTable(SymbolTableController symbolTable);
+    boolean isEndOfFile();
+
+    Token getToken();
     
 }
