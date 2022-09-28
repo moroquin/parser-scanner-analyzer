@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 public enum AlphabetSymbol {
     DIGIT((c)->Character.isDigit(c)), 
     LETTER((c)->Character.isLetter(c)),
-    ERROR((c)->true);
+    ERROR((c)->!(AlphabetSymbol.DIGIT.isA(c)||AlphabetSymbol.LETTER.isA(c)));
 
     private final Predicate<Character> isThisType;
 
