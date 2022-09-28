@@ -1,8 +1,11 @@
 package com.leng.analizador.analyzer.models;
 
+import com.leng.analizador.analyzer.utils.FilePosition;
+
 public class Token {
 
-    public Token(Object tokenType, int line, int column, String path, String string) {
+
+    public Token(Object tokenType, FilePosition filePosition, String string) {
     }
     
 }

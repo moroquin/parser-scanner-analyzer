@@ -3,6 +3,7 @@ package com.leng.analizador.analyzer.controller.parser.jss;
 import com.leng.analizador.analyzer.controller.parser.Parseable;
 import com.leng.analizador.analyzer.models.State;
 import com.leng.analizador.analyzer.models.Token;
+import com.leng.analizador.analyzer.utils.FilePosition;
 import com.leng.analizador.analyzer.utils.ManagedFiles;
 
 import java.io.IOException;
@@ -73,11 +74,11 @@ public class JSSParser implements Parseable {
       )
     );
 
+    FilePosition filePosition = new FilePosition(line, column, path);
+
     return new Token(
       transictionFunction.getTokenType(actualState),
-      line,
-      column,
-      path,
+      filePosition,
       temporalWord.toString()
     );
   }

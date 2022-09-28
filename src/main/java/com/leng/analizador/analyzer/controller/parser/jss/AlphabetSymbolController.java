@@ -1,17 +1,25 @@
 package com.leng.analizador.analyzer.controller.parser.jss;
 
+import com.leng.analizador.analyzer.models.AlphabetSymbol;
+
 public class AlphabetSymbolController {
 
     public boolean isWhiteSpace(char charAt) {
-        return false;
+        return Character.isWhitespace(charAt)||isNewLine(charAt);
     }
 
     public boolean isNewLine(char charAt) {
-        return false;
+        return (charAt=='\r')||(charAt=='\n');
     }
 
-    public Object getAlphabetSymbol(char charAt) {
-        return null;
+    public AlphabetSymbol getAlphabetSymbol(char charAt) {
+        for (AlphabetSymbol alphabetSymbol : AlphabetSymbol.values()) {
+            if (alphabetSymbol.isA(charAt)){
+                return alphabetSymbol;
+            }
+        }
+        
+        return AlphabetSymbol.ERROR;
     }
 
 }
