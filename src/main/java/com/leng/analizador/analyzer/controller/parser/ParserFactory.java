@@ -17,7 +17,7 @@ public enum ParserFactory {
     }
 
     public Parseable getParser() {
-        return null;
+        return parser.get();
     }
     
 }

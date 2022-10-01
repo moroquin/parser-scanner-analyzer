@@ -1,9 +1,10 @@
-package com.leng.analizador.analyzer.models;
+package com.leng.analizador.analyzer.models.parser;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+
 
 public class AlphabetSymbolTest {
 

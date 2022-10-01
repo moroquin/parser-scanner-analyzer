@@ -1,4 +1,4 @@
-package com.leng.analizador.analyzer.models;
+package com.leng.analizador.analyzer.models.parser;
 
 import java.util.function.Predicate;
 

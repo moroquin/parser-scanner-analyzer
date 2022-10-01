@@ -1,8 +1,7 @@
 package com.leng.analizador.analyzer.controller.parser.jss;
 
-import com.leng.analizador.analyzer.models.AlphabetSymbol;
-import com.leng.analizador.analyzer.models.State;
-import com.leng.analizador.analyzer.models.TokenType;
+import com.leng.analizador.analyzer.models.parser.AlphabetSymbol;
+import com.leng.analizador.analyzer.models.parser.State;
 
 public class TransitionFunctionController {
 

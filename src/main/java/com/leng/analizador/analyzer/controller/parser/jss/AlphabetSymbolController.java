@@ -1,6 +1,6 @@
 package com.leng.analizador.analyzer.controller.parser.jss;
 
-import com.leng.analizador.analyzer.models.AlphabetSymbol;
+import com.leng.analizador.analyzer.models.parser.AlphabetSymbol;
 
 public class AlphabetSymbolController {
 

@@ -38,5 +38,16 @@ public class FilePosition {
         return filePath;
     }
 
+
+    @Override
+    public String toString() {
+        return "[" +
+            " line='" + getLine() + "'" +
+            ", column='" + getColumn() + "'" +
+            ", filePath='" + getFilePath() + "'" +
+            "]";
+    }
+
+
     
 }

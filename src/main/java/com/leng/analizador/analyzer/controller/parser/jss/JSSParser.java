@@ -1,9 +1,9 @@
 package com.leng.analizador.analyzer.controller.parser.jss;
 
 import com.leng.analizador.analyzer.controller.parser.Parseable;
-import com.leng.analizador.analyzer.models.AlphabetSymbol;
-import com.leng.analizador.analyzer.models.State;
 import com.leng.analizador.analyzer.models.Token;
+import com.leng.analizador.analyzer.models.parser.AlphabetSymbol;
+import com.leng.analizador.analyzer.models.parser.State;
 import com.leng.analizador.analyzer.utils.FilePosition;
 import com.leng.analizador.analyzer.utils.ManagedFiles;
 import java.io.IOException;

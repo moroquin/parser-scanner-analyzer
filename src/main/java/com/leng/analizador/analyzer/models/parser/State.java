@@ -1,4 +1,4 @@
-package com.leng.analizador.analyzer.models;
+package com.leng.analizador.analyzer.models.parser;
 
 public enum State {
     S0,
