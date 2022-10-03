@@ -3,12 +3,22 @@ package com.leng.analizador.analyzer.models.parser;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 
 
 public class AlphabetSymbolTest {
 
-    
+    @Test
+    public void shuldHasErrorSymbol(){
+        assertTrue(Arrays.asList(AlphabetSymbol.values()).stream().anyMatch(s -> s.name().equals("ERROR")));
+    }
+
+    @Test
+    public void shuldHasLeastOneExtraSymbol(){
+        assertTrue(AlphabetSymbol.values().length >=2);
+    }
 
     @Test
     public void shouldReturnTrueWithALetterInput() {

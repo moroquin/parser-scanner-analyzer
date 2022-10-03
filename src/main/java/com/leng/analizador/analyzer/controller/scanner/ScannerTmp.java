@@ -1,5 +1,7 @@
 package com.leng.analizador.analyzer.controller.scanner;
 
+import java.io.IOException;
+
 import com.leng.analizador.analyzer.controller.SymbolTableController;
 import com.leng.analizador.analyzer.controller.parser.Parseable;
 import com.leng.analizador.analyzer.models.SyntaxTree;
@@ -17,8 +19,13 @@ public class ScannerTmp implements Scannable {
     @Override
     public boolean verifyGrammar() {
         parser.readFile("/home/oliver/tmp.txt");
-        while (!parser.isEndOfFile()) {
-            System.out.println(parser.getToken());
+        try {
+            while (!parser.isEndOfFile()) {
+                System.out.println(parser.getToken());
+            }
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
 
         

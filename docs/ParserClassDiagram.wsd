@@ -2,133 +2,110 @@
 
 
 
-package analyzer{
+package model{
+    class Token{
+        -TypeToken typeToken
+        -int line
+        -int column
+        -String path
+    }
 
-    package controller{
-
-    
-        class ErrorController{
-            -Error error
-
-        } 
-
-
-    
-        package parser{
-
-            enum ParserFactory{
-                +getParser(): Parseable
-            }
-
-            interface Parseable{
-                +getToken(): Token
-                +isEndOfFile(): boolean
-                +readFile():boolean
-            }
-
-            package jssparsercontroller{
-                class JSSParser{
-                    -TransitionFunctionController transitionFunction
-                    -int line
-                    -int column
-                    -String path
-                    -String content
-                }
-
-                class AccecptanceStatesController{
-                    +getAcceptanceState(State state):TypeToken
-                }
-
-                class TransitionFunctionController{
-                    -State[][] statesMatrix
-                    +delta(State state, AlphabetSymbol symbol): State
-                }
-
-                class AlphabetSymbolController{
-                    +isCharacterTerminator(): boolean
-                    +getAlphabetSymbol(char test): AlphabetSymbol
-                }
-
-                JSSParser *-- TransitionFunctionController
-                JSSParser --> AccecptanceStatesController
-                JSSParser --> AlphabetSymbolController
-
-            }
-
-            
-            ParserFactory .left.> Parseable
-
-            JSSParser -up-|> Parseable
-            
-
-        }
-
-
-
-        
-
-        
-        Scannable -right-> Parseable: getToken
+    enum TypeToken{
 
     }
 
-
-    package model{
-
-
-        class Token{
-            -TypeToken typeToken
-            -int line
-            -int column 
-            -String path
+    package model.parser{
+        enum State{
+            +ST0
+            +ST1
         }
 
-        enum TypeToken{
-
+        class AccecptanceStates{
+            -List<State> acceptanceStates
+            +getAcceptanceStates(): List<State>
         }
 
-        package jssparser{
-            enum State{
-                +ST0
-                +ST1
-            }
-
-            class AccecptanceStates{
-                -List<State> acceptanceStates
-                +getAcceptanceStates(): List<State>
-            }
-
-            
-
-            enum AlphabetSymbol{
-                +DIGIT
-                +LETTER
-            }
+        enum AlphabetSymbol{
+            +DIGIT
+            +LETTER
         }
-
-        Token *-- TypeToken
-
     }
 
-    
-
-    
-
-    Parseable ..> Token
-    AccecptanceStatesController --> AccecptanceStates
-    AccecptanceStatesController ..> TypeToken
-    TransitionFunctionController *-- State
-    TransitionFunctionController ..> AlphabetSymbol
-    AlphabetSymbolController ..> AlphabetSymbol
+    Token *-- TypeToken
 }
 
 package utils{
-        class ManageFiles{
-            +String readTextFile(String path): String
-        }
+    class ManageFiles{
+        +String readTextFile(String path): String
     }
+}
+
+package controller{
+    class ErrorController{
+        -Error error
+
+    }
+
+    class AnalyazerController{
+    }
+
+    package parser{
+
+        enum ParserFactory{
+            +getParser(): Parseable
+        }
+
+        interface Parseable{
+            +getToken(): Token
+            +isEndOfFile(): boolean
+            +readFile():boolean
+        }
+
+        package jss{
+            class JSSParserController{
+                -TransitionFunctionController transitionFunction
+                -int line
+                -int column
+                -String path
+                -String content
+            }
+
+            class AccecptanceStatesController{
+                +getAcceptanceState(State state):TypeToken
+            }
+
+            class TransitionFunctionController{
+                -State[][] statesMatrix
+                +delta(State state, AlphabetSymbol symbol): State
+            }
+
+            class AlphabetSymbolController{
+                +isCharacterTerminator(): boolean
+                +getAlphabetSymbol(char test): AlphabetSymbol
+            }
+
+            JSSParserController *-- TransitionFunctionController
+            JSSParserController --> AccecptanceStatesController
+            JSSParserController --> AlphabetSymbolController
+        }
+
+        ParserFactory .left.> Parseable
+        JSSParserController -up-|> Parseable
+    }
+
+    Scannable -right-> Parseable: getToken
+}
+
+
+
 
 
 Parseable ..> ManageFiles
+Parseable ..> Token
+AccecptanceStatesController --> AccecptanceStates
+AccecptanceStatesController ..> TypeToken
+TransitionFunctionController *-- State
+TransitionFunctionController ..> AlphabetSymbol
+AlphabetSymbolController ..> AlphabetSymbol
 
 @enduml

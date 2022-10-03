@@ -5,6 +5,5 @@ public enum State {
     S1,
     S2,
     SA,
-    SR;
-
+    SE;
 }

@@ -1,5 +1,7 @@
 package com.leng.analizador.analyzer.models;
 
+import javax.swing.text.Position;
+
 import com.leng.analizador.analyzer.utils.FilePosition;
 
 public class Token {
@@ -35,6 +37,18 @@ public class Token {
             ", filePosition='" + getFilePosition() + "'" +
             ", lexeme='" + getLexeme() + "'" +
             "}";
+    }
+
+    public int getLine(){
+        return filePosition.getLine();
+    }
+
+    public int getColumn(){
+        return filePosition.getColumn();
+    }
+
+    public String getFilePath(){
+        return filePosition.getFilePath();
     }
 
 

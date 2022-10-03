@@ -1,7 +1,9 @@
 package com.leng.analizador.analyzer.controller.parser.jss;
 
+import com.leng.analizador.analyzer.controller.ErrorController;
 import com.leng.analizador.analyzer.controller.parser.Parseable;
 import com.leng.analizador.analyzer.models.Token;
+import com.leng.analizador.analyzer.models.error.ErrorType;
 import com.leng.analizador.analyzer.models.parser.AlphabetSymbol;
 import com.leng.analizador.analyzer.models.parser.State;
 import com.leng.analizador.analyzer.utils.FilePosition;
@@ -17,9 +19,10 @@ public class JSSParser implements Parseable {
   private String path;
   private String content;
   private boolean isFileRead = false;
-  private AlphabetSymbolController alphabetSymbol = new AlphabetSymbolController();
+  private AlphabetSymbolController alphabetSymbolController = new AlphabetSymbolController();
   private StringBuilder temporalWord = new StringBuilder();
   private AcceptanceStateController accpentanceStates = new AcceptanceStateController();
+  private ErrorController errorController = new ErrorController();
 
   @Override
   public boolean readFile(String path) {
@@ -37,46 +40,76 @@ public class JSSParser implements Parseable {
   }
 
   @Override
-  public boolean isEndOfFile() {
+  public boolean isEndOfFile() throws IOException {
+    if (!isFileRead) throw new IOException("Should read a file before");
     ignoreWhiteSpace();
-    if (positionContent == content.length()) {
+    if (positionContent >= content.length()) {
       return true;
     }
     return false;
   }
 
+  /* (non-Javadoc)
+   * @see com.leng.analizador.analyzer.controller.parser.Parseable#getToken()
+   */
   @Override
-  public Token getToken() {
+  public Token getToken() throws IOException {
+    if (!isFileRead) throw new IOException("Should read a file before");
+
     ignoreWhiteSpace();
+
     temporalWord = new StringBuilder();
+
     State actualState = transictionFunction.getInitState();
     char actualChar = content.charAt(positionContent);
     State temporalState = actualState;
+    AlphabetSymbol alphabetSymbol = null;
+    int initialLine = line;
+    int initialColumn = column;
 
     do {
-      temporalState = actualState;
+      actualState = temporalState;
       actualChar = content.charAt(positionContent);
-      temporalState =
-        transictionFunction.delta(
-          actualState,
-          alphabetSymbol.getAlphabetSymbol(actualChar)
-        );
-      if (temporalState != State.SA) {
-        column++;
-        positionContent++;
-        temporalWord.append(actualChar);
-        if (
-          alphabetSymbol.getAlphabetSymbol(actualChar) == AlphabetSymbol.NEWLINE
-        ) {
-          line++;
-        }
+      alphabetSymbol = alphabetSymbolController.getAlphabetSymbol(actualChar);
+      temporalState = transictionFunction.delta(actualState, alphabetSymbol);
+
+      if (temporalState.equals(State.SA)) {
+        //System.out.println("break");
+        break;
       }
-    } while (
-      (positionContent + 1 < content.length()) &&
-      (temporalState != State.SA && temporalState != State.SR)
+
+      column++;
+      positionContent++;
+      temporalWord.append(actualChar);
+      /*System.out.println(temporalWord);
+      System.out.println("temporal State: "+temporalState.name());
+      System.out.println("actual State: "+temporalState.name());
+      System.out.println(alphabetSymbol.name());
+      System.out.println("\n");*/
+
+      if (alphabetSymbol == AlphabetSymbol.NEWLINE) {
+        line++;
+      }
+
+      if (temporalState.equals(State.SE)) {
+        break;
+      }
+    } while (positionContent + 1 < content.length());
+
+    FilePosition filePosition = new FilePosition(
+      initialLine,
+      initialColumn,
+      path
     );
 
-    FilePosition filePosition = new FilePosition(line, column, path);
+    if (temporalState.equals(State.SE)) {
+      errorController.appendLexical(
+        transictionFunction.getExpectedSymbols(actualState),
+        alphabetSymbol,
+        new FilePosition(line, column-1, path)
+      );
+      actualState = temporalState;
+    }
 
     return new Token(
       accpentanceStates.getTokenType(actualState),
@@ -86,34 +119,23 @@ public class JSSParser implements Parseable {
   }
 
   private void ignoreWhiteSpace() {
-    while (
-      (positionContent < content.length()) &&
-      (alphabetSymbol.isWhiteSpace(content.charAt(positionContent)))
-    ) {
-      if (alphabetSymbol.isNewLine(content.charAt(positionContent))) {
+    while (positionContent < content.length()) {
+      if (alphabetSymbolController.isNewLine(content.charAt(positionContent))) {
         positionContent++;
         line++;
         column = 0;
         continue;
       }
 
-      if (alphabetSymbol.isWhiteSpace(content.charAt(positionContent))) {
+      if (
+        alphabetSymbolController.isWhiteSpace(content.charAt(positionContent))
+      ) {
+        positionContent++;
         column++;
         continue;
       }
+
       break;
     }
   }
 }
-/*
-  
-
-0101010 1 01 01 01 01 01 
-1 01 0 10 10        
-   1 01 01 01 0
-10           
-
-
-
-
- */

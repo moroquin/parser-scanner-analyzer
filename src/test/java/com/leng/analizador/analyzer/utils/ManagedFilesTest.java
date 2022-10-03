@@ -8,8 +8,8 @@ import java.nio.file.Paths;
 import org.junit.Test;
 
 public class ManagedFilesTest {
-
-  private final Path resourceDirectory = Paths.get("src", "test", "resources");
+ 
+  private final Path resourceDirectory = Paths.get("src", "test", "resources","file1.txt");
   private final String absolutePath = resourceDirectory
     .toFile()
     .getAbsolutePath();
@@ -17,7 +17,7 @@ public class ManagedFilesTest {
   @Test
   public void shouldReadFile() throws IOException {
     String infoFile1 = "123456 asdf a123dfs  12d\nasdf asd 123 654 ";
-    String pathFile1 = absolutePath + "/file1.txt";
+    String pathFile1 = absolutePath;
     String readFile1 = "";
     readFile1 = ManagedFiles.readTextFile(pathFile1);
     assertEquals(infoFile1, readFile1);

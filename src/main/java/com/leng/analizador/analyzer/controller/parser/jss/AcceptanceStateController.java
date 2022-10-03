@@ -13,12 +13,16 @@ public class AcceptanceStateController {
         mapAcceptanceStates = new HashMap<>();
         mapAcceptanceStates.put(State.S1, TokenType.ID);
         mapAcceptanceStates.put(State.S2, TokenType.NUMBER);
-        mapAcceptanceStates.put(State.SR, TokenType.ERROR);
+        mapAcceptanceStates.put(State.SE, TokenType.ERROR);
 
     }
 
     public TokenType getTokenType(State actualState) {
-        return mapAcceptanceStates.get(actualState);
+        TokenType result = mapAcceptanceStates.get(actualState);
+        if (result != null)
+            return mapAcceptanceStates.get(actualState);
+
+        return TokenType.ERROR;
     }
 
 }
